@@ -1,16 +1,43 @@
-# React + Vite
+# Casa Bruma
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Casa Bruma es una aplicación web que simula una tienda online de indumentaria. Permite explorar un catálogo de productos, ver el detalle de cada uno, armar un carrito de compras y completar una compra simulada.
 
-Currently, two official plugins are available:
+## Tecnologías utilizadas
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+- React
+- JavaScript
+- Vite
+- React Bootstrap y Bootstrap
+- ESLint
 
-## React Compiler
+## Instalación y ejecución
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+1. Clonar el repositorio:
 
-## Expanding the ESLint configuration
+   ```bash
+   git clone https://github.com/guilleguevara245/casa-bruma-store.git
+   ```
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+2. Entrar a la carpeta del proyecto:
+
+   ```bash
+   cd casa-bruma-store
+   ```
+
+3. Instalar las dependencias:
+
+   ```bash
+   npm install
+   ```
+
+4. Iniciar el servidor de desarrollo:
+
+   ```bash
+   npm run dev
+   ```
+
+5. Abrir en el navegador la dirección que muestra la terminal (por lo general `http://localhost:5173`).
+
+## Integrantes
+
+- Guillermo Guevara
