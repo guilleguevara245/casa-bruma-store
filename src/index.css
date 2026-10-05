@@ -1,4 +1,12 @@
+@import url("https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500&family=Jost:wght@400&display=swap");
+
 body {
   background-color: #EAECE9;
   color: #2F3B3B;
+  font-family: "Jost", sans-serif;
+}
+
+h1 {
+  font-family: "Cormorant Garamond", serif;
+  font-weight: 500;
 }
