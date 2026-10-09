@@ -41,3 +41,4 @@ Casa Bruma es una aplicación web que simula una tienda online de indumentaria. 
 ## Integrantes
 
 - Guillermo Guevara
+- Elias Ezequiel llorens 
