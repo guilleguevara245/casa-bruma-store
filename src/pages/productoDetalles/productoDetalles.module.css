@@ -1,0 +1,13 @@
+.producto{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+
+}
+.img_content{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.producto_informacion{
+    background-color: rgb(218, 216, 216);
+}
