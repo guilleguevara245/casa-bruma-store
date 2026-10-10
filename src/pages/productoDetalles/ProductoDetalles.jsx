@@ -3,7 +3,7 @@ import styles from "./productoDetalles.module.css"
 import productos from "../../data/prooductos";
 
 function ProductoDetalles() {
-    
+    //aplico renderizador condicional "producto.stock == 1 &&"
     const {id} =useParams();
     const producto= productos.find(e=> e.id ==id)
   return (
@@ -14,10 +14,12 @@ function ProductoDetalles() {
         <div className={styles.producto_informacion}>
             <h3>{producto.nombre}</h3>
             <div>
-               <p>{producto.precio}</p>
-              <p>{producto.stock}</p>
+              <p>precio: ${producto.precio} ARS</p>
+              <p>stock: {producto.stock} 
+                 {producto.stock==1  && <b>ULTIMA UNIDAD</b> }</p>
               <p>{producto.descripcion}</p>
             </div>
+            <button className="">agregar al carrito</button>
         </div>
     </div>
   )

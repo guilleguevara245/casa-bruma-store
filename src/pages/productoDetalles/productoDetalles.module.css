@@ -9,5 +9,12 @@
     align-items: center;
 }
 .producto_informacion{
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    flex-direction: column;
     background-color: rgb(218, 216, 216);
+}
+.producto_informacion>button{
+    width:10vw;
 }

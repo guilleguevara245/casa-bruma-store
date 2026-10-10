@@ -7,7 +7,7 @@ const productos = [
  precio: 12000,
  imagen: "/img/remera.webp",
  descripcion: "Remera de algodón disponible en varios colores.",
- stock: 10
+ stock: 1
  }
 ];
 export default productos;
