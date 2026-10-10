@@ -13,25 +13,27 @@ function ProductoDetalles() {
         <div className={styles.img_content}>
           <img src={producto.imagen}></img>
         </div>
-        <div className={styles.producto_informacion}>
+        <div className={styles.producto_contenedor}>
             <div className={styles.encabezado}>
               <h3>{producto.nombre}</h3>
               <p>{producto.categoria}</p>
             </div>
 
-            <p>precio: ${producto.precio} ARS</p>
-            <p>stock: {producto.stock}  
-                 {producto.stock==1  && <b> 🔥 ULTIMA UNIDAD</b> }</p>
-            <p>{producto.descripcion}</p>
-            <div>
-              <div className={styles.accionCarrito}>
-                <button onClick={()=>cantidad>0?setCantidad(cantidad-1):setCantidad(0)}>-</button>
-                <p>{cantidad} </p>
-                <button onClick={()=>cantidad<producto.stock?setCantidad(cantidad+1):setCantidad(cantidad)}>+</button>
-                <button className="">agregar al carrito</button>
-              </div>  
-            </div>  
+            <div className={styles.producto_informacion}>
+              <p className={styles.destaque}>Precio: ${producto.precio} ARS</p>
+              <p>stock: {producto.stock}  
+                  {producto.stock==1  && <b> 🔥 ULTIMA UNIDAD</b> }</p>
+              <p>{producto.descripcion}</p>  
+            </div>
             
+            <div className={styles.producto_carrito}>
+                <div className={styles.accionCarrito}>
+                  <button onClick={()=>cantidad>0?setCantidad(cantidad-1):setCantidad(0)}>-</button>
+                  <p>{cantidad} </p>
+                  <button onClick={()=>cantidad<producto.stock?setCantidad(cantidad+1):setCantidad(cantidad)}>+</button>
+                  <button className="">agregar al carrito</button>
+                </div>  
+            </div>
 
         </div>
     </div>
