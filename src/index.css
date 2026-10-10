@@ -13,5 +13,19 @@ h1 {
 
 .activo {
   font-weight: 700;
-  border-bottom: 2px solid #2F3B3B;
+  border-bottom: 2px solid #EAECE9;
+}
+
+.barra {
+  background-color: #26302F;
+}
+
+.barra .navbar-brand {
+  font-family: "Cormorant Garamond", serif;
+  font-size: 1.6rem;
+  color: #EAECE9;
+}
+
+.barra .nav-link {
+  color: #EAECE9;
 }

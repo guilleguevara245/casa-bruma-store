@@ -12,7 +12,7 @@ function NavigationBar() {
   }
 
   return (
-    <Navbar expand="md" expanded={expandido}>
+    <Navbar expand="md" expanded={expandido} variant="dark" className="barra">
       <Container>
         <Navbar.Brand>Casa Bruma</Navbar.Brand>
         <Navbar.Toggle aria-controls="menu-principal" onClick={() => setExpandido(!expandido)} />
