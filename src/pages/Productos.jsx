@@ -1,29 +1,27 @@
 import { Card, CardGroup, Button } from "react-bootstrap"
 import productos from "../data/prooductos";
 
-const listadoProductos = () =>{
+const ListadoProductos = () =>{
 
-    const productosCards = productos[0]
-    const prodId = productosCards.id
-    const prodImg = productosCards.imagen
     return(
-        <CardGroup>
-      <Card>
-        <Card.Img variant="top" src= {prodImg}/>
+        productos.map((producto)=><CardGroup>
+      <Card key={producto.id}>
+        <Card.Img variant="top" src= {producto.imagen}/>
         <Card.Body>
-          <Card.Title>{productosCards.nombre}</Card.Title>
+          <Card.Title>{producto.nombre}</Card.Title>
           <Card.Text>
-            {productosCards.descripcion}
+            {producto.descripcion}
           </Card.Text>
         </Card.Body>
         <Card.Footer>
-          <small className="text">{productosCards.precio}</small>
+          <small className="text">{producto.precio}</small>
         </Card.Footer>
-        <Button variant="primary" href={`/productos/${prodId}`}>Ir al producto</Button>
+        <Button variant="primary" href={`/productos/${producto.id}`}>Ir al producto</Button>
       </Card>
     </CardGroup>
-  );
+  )
+)
 }
 
 
-export default listadoProductos
+export default ListadoProductos;
