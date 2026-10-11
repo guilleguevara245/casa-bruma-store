@@ -29,3 +29,10 @@ h1 {
 .barra .nav-link {
   color: #EAECE9;
 }
+
+.portada {
+  background-image: url("/img/portada-casa-bruma-store.jpg");
+  background-size: cover;
+  background-position: center;
+  min-height: 60vh;
+}

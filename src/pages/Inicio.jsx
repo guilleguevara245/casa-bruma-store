@@ -8,7 +8,7 @@ function Inicio() {
       <p>
         <Link to="/productos" className="btn btn-dark">Ver catálogo</Link>
       </p>
-      <img src="/img/banner-casa-bruma-store.jpg" alt="Interior de una tienda de ropa con percheros y estantes de madera" className="mt-4" style={{ maxWidth: "100%", height: "auto" }} />
+      <div className="portada mt-4"></div>
     </div>
   );
 }
