@@ -1,0 +1,25 @@
+.portada {
+  background-image: url("/img/portada-casa-bruma-store.jpg");
+  background-size: cover;
+  background-position: center;
+}
+
+.capa {
+  background-color: rgba(38, 48, 47, 0.65);
+  min-height: 100vh;
+  padding: 3rem 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: #EAECE9;
+}
+
+.capa h1 {
+  font-size: 3.5rem;
+}
+
+.capa p {
+  max-width: 600px;
+}
