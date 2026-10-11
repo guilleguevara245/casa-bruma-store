@@ -1,4 +1,4 @@
-import { useParams } from "react-router"
+import { useParams } from "react-router-dom"
 import styles from "./productoDetalles.module.css"
 import productos from "../../data/prooductos";
 import { useState } from "react";
@@ -22,9 +22,10 @@ function ProductoDetalles() {
             </div>
 
             <div className={styles.producto_informacion}>
-              <p className={styles.destaque}>Precio: ${producto.precio} ARS</p>
-              <p>stock: {producto.stock}  
-                  {producto.stock==1  && <b> 🔥 ULTIMA UNIDAD</b> }</p>
+              <p className={styles.destaque}>${producto.precio} ARS</p>
+              <p>Stock: {producto.stock}  
+              {producto.stock==1  && <b> 🔥 ULTIMA UNIDAD</b> }</p>
+            
             </div>
             <div className={styles.descripcion}>
               <p>{producto.descripcion}</p>  
@@ -33,7 +34,7 @@ function ProductoDetalles() {
             <div className={styles.producto_carrito}>
                 <div className={styles.accionCarrito}>
   
-                  <Button variant="light"  onClick={()=>cantidad>producto.stock?setCantidad(cantidad-1):setCantidad(0)}>-</Button>
+                  <Button variant="light"  onClick={()=>cantidad>0?setCantidad(cantidad-1):setCantidad(0)}>-</Button>
                   <p>{cantidad} </p>
                   <Button variant="light"  onClick={()=>cantidad<producto.stock?setCantidad(cantidad+1):setCantidad(cantidad)}>+</Button>
                   <Button variant="light">agregar al carrito</Button>

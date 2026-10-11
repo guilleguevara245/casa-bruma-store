@@ -7,10 +7,16 @@ p{
     margin: 0.1rem;
 
 }
+h1{
 
+}
 .producto{
     display: grid;
-    grid-template-columns: repeat(2,1fr);
+    grid-template-columns: 0.9fr 1.2fr;
+    gap: 5rem;
+    align-items: start;
+    max-width: 1400px;
+    margin: 3rem auto;
 
 }
 .img_content{
@@ -29,17 +35,20 @@ p{
 .producto_contenedor{
     display: flex;
     flex-direction: column;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.45);
-    background-color: #BEBEBE;
+    box-shadow: 0 0px 0px rgba(0, 0, 0, 0.45);
     border-radius: 10px;
-    margin: 10px;
+    margin: 3rem 10px 10px 10px;
     padding: 10px;
     width:900px ; 
     min-height: 400px;
 
 }
 .destaque{
-    font-weight: bold;
+    font-family: inherit;
+    font-size: 1.8rem;
+    font-weight: 600;
+    letter-spacing: -0.5px;
+    color: #252525;
 }
 b{
     background-color: rgb(243, 125, 15);
@@ -72,10 +81,12 @@ b{
     
 }
 
+
 .descripcion{
     border-left: 1px  solid black;
     border-left: 1px  solid black;
     max-width: 700px;
+    font-size: 0.9vw;
     flex: 1; /*toma extra del ancho por si la descripcion es larga*/
 }
 .descripcion>p{
