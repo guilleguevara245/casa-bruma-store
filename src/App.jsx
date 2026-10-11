@@ -1,7 +1,7 @@
 import { Routes, Route } from "react-router-dom";
 import NavigationBar from "./components/Navbar";
 import Inicio from "./pages/Inicio.jsx";
-import Productos from "./pages/Productos.jsx";
+import Productos from "./pages/productos/Productos.jsx";
 
 function App() {
   return (
