@@ -1,0 +1,18 @@
+.barra {
+  background-color: #26302F;
+}
+
+.barra .marca {
+  font-family: "Cormorant Garamond", serif;
+  font-size: 1.6rem;
+  color: #EAECE9;
+}
+
+.barra .link {
+  color: #EAECE9;
+}
+
+.activo {
+  font-weight: 700;
+  border-bottom: 2px solid #EAECE9;
+}
