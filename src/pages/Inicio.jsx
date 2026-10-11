@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+
 function Inicio() {
   return (
     <div className="container mt-4" style={{ textAlign: "center" }}>
@@ -8,7 +9,9 @@ function Inicio() {
       <p>
         <Link to="/productos" className="btn btn-dark">Ver catálogo</Link>
       </p>
-      <div className="portada mt-4"></div>
+      <div className="portada mt-4">
+        <div className="capa"></div>
+      </div>
     </div>
   );
 }
