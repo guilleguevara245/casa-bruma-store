@@ -15,21 +15,23 @@ function Inicio() {
       <div className="container mt-4" style={{ textAlign: "center" }}>
         <img src="/img/banner-casa-bruma-store.jpg" alt="Interior de una tienda de ropa con percheros y estantes de madera" style={{ maxWidth: "100%", height: "auto" }} />
       </div>
-      <div className={styles.beneficios}>
-        <div className={styles.beneficio}>
-          <img src="/img/icono-envios.png" alt="Icono de un camión de envíos" className={styles.icono} />
-          <h2>Envíos a todo el país</h2>
-          <p>Recibí tu pedido en la puerta de tu casa.</p>
-        </div>
-        <div className={styles.beneficio}>
-          <img src="/img/icono-cambios.png" alt="Icono de cambios" className={styles.icono} />
-          <h2>Cambios sin costo</h2>
-          <p>Si no te queda bien, lo cambiás sin vueltas.</p>
-        </div>
-        <div className={styles.beneficio}>
-          <img src="/img/icono-cuotas.png" alt="Icono de una tarjeta de pago" className={styles.icono} />
-          <h2>Pagá en cuotas</h2>
-          <p>Elegí cómo pagar con tarjeta, sin interés.</p>
+      <div className="container py-5">
+        <div className="row text-center">
+          <div className={`col-md-4 mb-4 ${styles.beneficio}`}>
+            <img src="/img/icono-envios.png" alt="Icono de un camión de envíos" className={styles.icono} />
+            <h2>Envíos a todo el país</h2>
+            <p className="mb-0">Recibí tu pedido en la puerta de tu casa.</p>
+          </div>
+          <div className={`col-md-4 mb-4 ${styles.beneficio}`}>
+            <img src="/img/icono-cambios.png" alt="Icono de cambios" className={styles.icono} />
+            <h2>Cambios sin costo</h2>
+            <p className="mb-0">Si no te queda bien, lo cambiás sin vueltas.</p>
+          </div>
+          <div className={`col-md-4 mb-4 ${styles.beneficio}`}>
+            <img src="/img/icono-cuotas.png" alt="Icono de una tarjeta de pago" className={styles.icono} />
+            <h2>Pagá en cuotas</h2>
+            <p className="mb-0">Elegí cómo pagar con tarjeta, sin interés.</p>
+          </div>
         </div>
       </div>
     </>
