@@ -1,0 +1,31 @@
+.Link {
+    color: white
+}
+
+.buscador {
+    max-width: 480px;
+    margin: 1rem 0 1rem;
+}
+
+.buscadorInput {
+    text-align: left;
+    border-color: #2F3B3B;
+    background-color: #F6F7F5;
+    color: #2F3B3B;
+}
+
+.buscadorInput:focus {
+    border-color: #26302F;
+    box-shadow: 0 0 0 0.2rem rgba(38, 48, 47, 0.2);
+}
+
+/* hace que salte limpiar en vez de una x pedorra */
+.buscadorInput::-webkit-search-cancel-button {
+    -webkit-appearance: none;
+    appearance: none;
+}
+
+.sinResultados {
+    padding: 3rem 1rem;
+    color: #2F3B3B;
+}
