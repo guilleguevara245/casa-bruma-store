@@ -5,11 +5,8 @@
 }
 p{
     margin: 0.1rem;
-
 }
-h1{
 
-}
 .producto{
     display: grid;
     grid-template-columns: 0.9fr 1.2fr;

@@ -8,8 +8,20 @@ import Image from 'react-bootstrap/Image';
 function ProductoDetalles() {
     //aplico renderizador condicional "producto.stock == 1 &&"
     const {id} =useParams();
-    const [cantidad,setCantidad] =useState(0)
+    const [cantidad,setCantidad] =useState(1)
     const producto= productos.find(e=> e.id ==id)
+
+    function agregarLocalStorage(){
+      if(!localStorage.getItem("carrito")){
+        localStorage.setItem("carrito",JSON.stringify({[id]:cantidad}))
+      } 
+      else{
+        const carrito = JSON.parse(localStorage.getItem("carrito")) 
+        carrito[id.toString()]= cantidad  
+        localStorage.setItem("carrito",JSON.stringify(carrito))
+        console.log(localStorage.getItem("carrito"))
+      }
+    }
   return (
     <div className={styles.producto}>
         <div className={styles.img_content}>
@@ -25,8 +37,8 @@ function ProductoDetalles() {
               <p className={styles.destaque}>${producto.precio} ARS</p>
               <p>Stock: {producto.stock}  
               {producto.stock==1  && <b> 🔥 ULTIMA UNIDAD</b> }</p>
-            
             </div>
+            
             <div className={styles.descripcion}>
               <p>{producto.descripcion}</p>  
             </div>
@@ -37,7 +49,7 @@ function ProductoDetalles() {
                   <Button variant="light"  onClick={()=>cantidad>0?setCantidad(cantidad-1):setCantidad(0)}>-</Button>
                   <p>{cantidad} </p>
                   <Button variant="light"  onClick={()=>cantidad<producto.stock?setCantidad(cantidad+1):setCantidad(cantidad)}>+</Button>
-                  <Button variant="light">agregar al carrito</Button>
+                  <Button variant="light" onClick={agregarLocalStorage}>agregar al carrito</Button>
                 </div>  
             </div>
 
