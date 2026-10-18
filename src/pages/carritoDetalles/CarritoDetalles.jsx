@@ -1,4 +1,5 @@
-import CarritoProducto from "../../components/CarritoProducto";
+import CarritoProducto from "../../components/carritoProducto/CarritoProducto";
+
 
 
 export default function CarritoDetalles() {
@@ -11,7 +12,6 @@ export default function CarritoDetalles() {
         <div >
             {storageProductos.map((producto) =>
             <CarritoProducto
-                key={producto.id}
                 id={producto.id}
                 cantidad={producto.cantidad}
             />

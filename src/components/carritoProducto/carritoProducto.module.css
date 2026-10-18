@@ -1,0 +1,9 @@
+.contenedor{
+    display: flex;
+    align-items: flex-start;
+    padding-left: 10rem;
+    
+}
+.img_content{
+    width: 10rem;
+}

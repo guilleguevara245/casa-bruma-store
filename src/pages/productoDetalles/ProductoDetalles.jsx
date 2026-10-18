@@ -8,25 +8,26 @@ import Image from 'react-bootstrap/Image';
 function ProductoDetalles() {
     //aplico renderizador condicional "producto.stock == 1 &&"
     const {id} =useParams();
-    const [cantidad,setCantidad] =useState(1)
+    const [cantidad,setCantidad] =useState(0)
     const producto= productos.find(e=> e.id ==id)
 
  function agregarLocalStorage() {
     let carrito = JSON.parse(localStorage.getItem("carrito"));
 
     if (carrito == null) {
-      carrito = [];
+      carrito = []; //si no hay un carrito genera la lista 
     }
 
-    if (!carrito.some(e => e.id === Number(id))) {
-      carrito.push({ id: Number(id), cantidad: cantidad });
+    if (!carrito.find(e => e.id === Number(id))) {
+      carrito.push({ id: Number(id), cantidad: cantidad }); // pone en la lista el objeto
     } else {
       carrito = carrito.map(e =>
         e.id === Number(id)
           ? { ...e, cantidad: cantidad }
-          : e
+          : e                            //Si la condición es verdadera, crea un nuevo objeto con todas las propiedades de e, 
       );
-    }
+                                       //pero reemplaza el valor de cantidad por el nuevo valor de cantidad.
+    }                                     //Si la condición es falsa, devuelve el objeto e tal como está, sin cambiar sus propiedades.
 
     localStorage.setItem("carrito", JSON.stringify(carrito));
   }
@@ -43,7 +44,7 @@ function ProductoDetalles() {
 
             <div className={styles.producto_informacion}>
               <p className={styles.destaque}>${producto.precio} ARS</p>
-              <p>Stock: {producto.stock}  
+              <p>Stock: {producto.stock - cantidad}  
               {producto.stock==1  && <b> 🔥 ULTIMA UNIDAD</b> }</p>
             </div>
             
