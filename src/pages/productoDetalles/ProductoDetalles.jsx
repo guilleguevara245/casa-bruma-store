@@ -11,17 +11,25 @@ function ProductoDetalles() {
     const [cantidad,setCantidad] =useState(1)
     const producto= productos.find(e=> e.id ==id)
 
-    function agregarLocalStorage(){
-      if(!localStorage.getItem("carrito")){
-        localStorage.setItem("carrito",JSON.stringify({[id]:cantidad}))
-      } 
-      else{
-        const carrito = JSON.parse(localStorage.getItem("carrito")) 
-        carrito[id.toString()]= cantidad  
-        localStorage.setItem("carrito",JSON.stringify(carrito))
-        console.log(localStorage.getItem("carrito"))
-      }
+ function agregarLocalStorage() {
+    let carrito = JSON.parse(localStorage.getItem("carrito"));
+
+    if (carrito == null) {
+      carrito = [];
     }
+
+    if (!carrito.some(e => e.id === Number(id))) {
+      carrito.push({ id: Number(id), cantidad: cantidad });
+    } else {
+      carrito = carrito.map(e =>
+        e.id === Number(id)
+          ? { ...e, cantidad: cantidad }
+          : e
+      );
+    }
+
+    localStorage.setItem("carrito", JSON.stringify(carrito));
+  }
   return (
     <div className={styles.producto}>
         <div className={styles.img_content}>
