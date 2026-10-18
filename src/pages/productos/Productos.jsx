@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 import { useState, useEffect } from "react";
 
 const stockSiHay = (producto) => {
-  return producto.stock <= 0 ? "No hay stock" : producto.stock;
+  return producto.stock > 0 ;
 };
 
 const ListadoProductos = () => {
@@ -99,20 +99,24 @@ const ListadoProductos = () => {
                   <Card.Text>
                     <small className="text-muted">{producto.categoria}</small>
                   </Card.Text>
-                  <Card.Text>{producto.descripcion}</Card.Text>
+                  <Card.Text>{producto.descBreve}</Card.Text>
                 </Card.Body>
                 <Card.Footer>
                   <ListGroup variant="flush">
                     <ListGroup.Item>{producto.precio}</ListGroup.Item>
-                    <ListGroup.Item>{stockSiHay(producto)}</ListGroup.Item>
+                    <ListGroup.Item>{stockSiHay(producto) ? producto.stock  : "No hay stock disponible"}</ListGroup.Item>
                     <ListGroup.Item>talle : m</ListGroup.Item>
                   </ListGroup>
                 </Card.Footer>
-                <Button variant="primary" size="sm">
+                {stockSiHay(producto) ? <Button variant="dark" size="md">
                   <Link to="/carrito" className={styles.Link}>Agregar al carrito</Link>
+                </Button> : 
+                <Button variant="secondary" size="md" className={styles.Link}>
+                  no hay stock disponible
                 </Button>
-                <Button variant="secondary" size="sm">
-                  <Link to={`/producto/${producto.id}` }className={styles.Link}>Ir al producto</Link>
+                }
+                <Button variant="light" size="md">
+                  <Link to={`/producto/${producto.id}`} className={styles.LinkBtnBlanco}>Ir al producto</Link>
                 </Button>
               </Card>
             </Col>
