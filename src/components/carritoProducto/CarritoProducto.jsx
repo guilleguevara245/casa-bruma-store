@@ -10,12 +10,19 @@ function CarritoProducto({id,cantidad}) {
         <div className={styles.img_content}>
           <Image src={producto.imagen} thumbnail />
         </div>      
-        <div className={styles.valores}>
-            <Card.Title className={styles.titulo}>{producto.nombre}</Card.Title>
-            <Card.Text>{producto.precio}</Card.Text>
-        </div>
-            <Card.Text>{cantidad}</Card.Text>
+        <div className={styles.contenedor_valores}>
+            <div className={styles.valores}>
+                <Card.Title>{producto.nombre}</Card.Title>
+                <div className={styles.precios}>
+                    <Card.Text>${producto.precio} ARS</Card.Text>
+                    {cantidad>1 && <Card.Text>x ${producto.precio *cantidad } ARS</Card.Text>}
+                </div>
 
+            </div>
+            <div className={styles.cantidad}> 
+                <Card.Text>Cantidad: {cantidad}</Card.Text>
+            </div>
+        </div>
     </Card>
   )
 }

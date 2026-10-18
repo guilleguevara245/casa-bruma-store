@@ -1,8 +1,26 @@
 .contenedor{
     display: flex;
-    align-items: flex-start;
-    padding-left: 10rem;
+    flex-direction: row;
+
+    justify-content: center;
+    align-items: center;
+    padding-left: 4vw;
     
+}
+.contenedor_valores{
+
+    min-width:50vw ;
+
+}
+.cantidad{
+    display: flex;
+    justify-content:flex-start;
+    padding-left: 1vw;
+}
+.valores{
+    display: flex;
+    justify-content: space-around;
+
 }
 .img_content{
     width: 10rem;
