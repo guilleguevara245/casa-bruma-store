@@ -6,19 +6,31 @@ const validate = (data) => {
     newErrors.firstName = "El nombre es obligatorio";
   } else if (data.firstName.length > 50) {
     newErrors.firstName = "El nombre es demasiado largo";
+  } else if (!/^[a-zA-ZÁÉÍÓÚáéíóúñÑ\s]+$/.test(data.firstName)) {
+    newErrors.firstName = "El nombre debe tener solo letras y espacios";
   }
-  if (data.lastName === "") newErrors.lastName = "El apellido es obligatorio";
+  if (data.lastName === "") {
+    newErrors.lastName = "El apellido es obligatorio";
+  } else if (data.lastName.length > 50) {
+    newErrors.lastName = "El apellido es demasiado largo";
+  } else if (!/^[a-zA-ZÁÉÍÓÚáéíóúñÑ\s]+$/.test(data.lastName)) {
+    newErrors.lastName = "El apellido debe tener solo letras y espacios";
+  }
 
   if (data.email === "") {
     newErrors.email = "El email es obligatorio";
-  } else if (!data.email.includes("@")) {
+  } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(data.email)) {
     newErrors.email = "El email no es valido";
   }
   if (data.phone === "") {
     newErrors.phone = "El teléfono debe ser obligatorio";
+  } else if (!/^(?:\+54)?\s?9?\s?\d{2}\s?\d{4}\s?\d{4}$/.test(data.phone)) {
+    newErrors.phone = "El teléfono debe contener entre 7 y 15 dígitos";
   }
   if (data.address === "") {
     newErrors.address = "La dirección es obligatoria";
+  } else if (!/^[a-zA-ZÁÉÍÓÚáéíóúñÑ0-9\s\-\#\/]+$/.test(data.address)) {
+    newErrors.address = "La dirección tiene caracteres invalidos";
   }
   if (!data.modality) {
     newErrors.modality = "La modalidad de entrega debe ser obligatoria";
