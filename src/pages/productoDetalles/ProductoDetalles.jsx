@@ -13,6 +13,7 @@ function ProductoDetalles() {
     const [cantidad,setCantidad] =useState(0)
     const producto= productos.find(e=> e.id ==id)
     const [error, setError] = useState(false) 
+    const [succes, setsucces] = useState(false) 
  function agregarLocalStorage() {
     let carrito = JSON.parse(localStorage.getItem("carrito"));
 
@@ -24,6 +25,7 @@ function ProductoDetalles() {
         if(error){
           setError(false)
         }
+        setsucces(true)
         if (!carrito.find(e => e.id === Number(id))) {
           carrito.push({ id: Number(id), cantidad: cantidad,precio:producto.precio }); // pone en la lista el objeto
         } 
@@ -38,6 +40,9 @@ function ProductoDetalles() {
 
       }
      else{
+        if(succes){
+          setsucces(false)
+        }
       setError(true)
     }
     localStorage.setItem("carrito", JSON.stringify(carrito));
@@ -78,6 +83,12 @@ function ProductoDetalles() {
                 {error && 
                   <Alert variant="danger">
                   no se puede agregar al carrito cantidades inferiores a 1 
+                  </Alert>
+
+                }  
+                {succes && 
+                  <Alert variant="success">
+                   se agregó correctamente, revise el Carrito. 
                   </Alert>
 
                 }  
