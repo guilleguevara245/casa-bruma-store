@@ -1,4 +1,4 @@
-import productos from "../../data/prooductos";
+import productos from "../../data/productos";
 import Card from 'react-bootstrap/Card';
 import Image from 'react-bootstrap/Image';
 import styles from "./carritoProducto.module.css"
@@ -39,6 +39,7 @@ function CarritoProducto({id,cantidad,setStorageProductos}) {
             );
             setCantidadActual(1)
         }
+        setStorageProductos(carrito)
         localStorage.setItem("carrito", JSON.stringify(carrito));
     }
     function aumentarCantidad(){
@@ -49,7 +50,6 @@ function CarritoProducto({id,cantidad,setStorageProductos}) {
                 ? { ...e, cantidad: cantidadActual }
                 : e                            
             );
-            
             setCantidadActual(cantidadActual+1)
         }
         else{
@@ -60,6 +60,7 @@ function CarritoProducto({id,cantidad,setStorageProductos}) {
             );
             setCantidadActual(cantidadActual)
         }
+        setStorageProductos(carrito)
         localStorage.setItem("carrito", JSON.stringify(carrito));
     }
     return (<>

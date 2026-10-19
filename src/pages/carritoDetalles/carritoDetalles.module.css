@@ -1,0 +1,17 @@
+.contenedor{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+}
+.titulo{
+    width:1200px;
+}
+.total{
+    display: flex;
+    justify-content: space-around;
+    width:800px;
+    padding-top: 1vw;
+    font-size: 1.3rem;
+
+}

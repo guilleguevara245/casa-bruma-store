@@ -1,6 +1,6 @@
 import { useParams } from "react-router-dom"
 import styles from "./productoDetalles.module.css"
-import productos from "../../data/prooductos";
+import productos from "../../data/productos";
 import { useState } from "react";
 import Button from 'react-bootstrap/Button';
 import Alert from 'react-bootstrap/Alert';
@@ -23,7 +23,7 @@ function ProductoDetalles() {
           setError(false)
         }
         if (!carrito.find(e => e.id === Number(id))) {
-          carrito.push({ id: Number(id), cantidad: cantidad }); // pone en la lista el objeto
+          carrito.push({ id: Number(id), cantidad: cantidad,precio:producto.precio }); // pone en la lista el objeto
         } 
         else {
           carrito = carrito.map(e =>
