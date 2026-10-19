@@ -73,6 +73,7 @@ const ListadoProductos = () => {
           <Form.Select
             id="orden"
             value={orden}
+            className={styles.buscadorInput}
             onChange={(e) => setOrden(e.target.value)}
           >
             <option value="ninguno">Sin ordenar</option>
