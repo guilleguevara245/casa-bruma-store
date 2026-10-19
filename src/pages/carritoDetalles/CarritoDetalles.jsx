@@ -3,11 +3,17 @@ import CarritoProducto from "../../components/carritoProducto/CarritoProducto";
 import styles from "./carritoDetalles.module.css"
 
 import Button from 'react-bootstrap/Button';
+import MensajeConfirmacion from "../../components/MensajeConfirmacion";
 export default function CarritoDetalles() {
     const [storageProductos, setStorageProductos] =useState(JSON.parse(localStorage.getItem("carrito")) || []); 
-    console.log(storageProductos)
-    //Object.entries > converir un objeto  en un array
+    const [confirmar,setConfirmar] =useState(false)
+    function onConfirmar(){
+        localStorage.setItem("carrito", JSON.stringify([]));
+        setStorageProductos([])
+    }
     return (
+        <>
+        {confirmar && <MensajeConfirmacion onConfirmar={onConfirmar}></MensajeConfirmacion>}
     <div className={styles.contenedor}>
         <div className={styles.titulo}>
             <h1>Carrito</h1>
@@ -23,10 +29,11 @@ export default function CarritoDetalles() {
             
         </div>
         <div className={styles.total}>
-            <p>Total :{storageProductos.reduce((total, e) => total + (Number(e.precio) *e.cantidad), 0)}</p>
-            <Button variant="primary">Contactar</Button>
+            <p>Total :${storageProductos.reduce((total, e) => total + (Number(e.precio) *e.cantidad), 0)} ARS</p>
+            <Button variant="primary" onClick={()=>setConfirmar(true)}>Confirmar</Button>
         </div>
 
     </div>
+    </>
   )
 }

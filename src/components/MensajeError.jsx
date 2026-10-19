@@ -2,7 +2,10 @@ import { useState } from 'react';
 
 function MensajeError({onConfirmar}) {
   const [mostrar, setMostrar] = useState(true);
-
+    function desactivar(){
+        setMostrar(false)
+        onConfirmar()
+    }
   return (
     <>
     {   mostrar && 
@@ -17,7 +20,7 @@ function MensajeError({onConfirmar}) {
         <p>selecciona confirmar para eliminar la compra</p>
       </div>
       <div className="modal-footer">
-        <button type="button" className="btn btn-primary" onClick={()=>onConfirmar()}>confirmar</button>
+        <button type="button" className="btn btn-primary" onClick={()=>desactivar()}>confirmar</button>
         <button type="button" className="btn btn-secondary" data-dismiss="modal"onClick={()=> setMostrar(false)} >cerrar</button>
       </div>
     </div>
