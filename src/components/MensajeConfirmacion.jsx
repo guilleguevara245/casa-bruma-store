@@ -17,7 +17,7 @@ function MensajeConfirmacion({onConfirmar}) {
 
       </div>
       <div className="modal-body">
-        <p>selecciona confirmar continuar la compra</p>
+        <p>selecciona confirmar para continuar la compra</p>
       </div>
       <div className="modal-footer">
         <button type="button" className="btn btn-primary" onClick={()=>desactivar()}>confirmar</button>
