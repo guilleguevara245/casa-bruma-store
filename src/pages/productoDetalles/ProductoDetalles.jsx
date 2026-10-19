@@ -54,7 +54,7 @@ function ProductoDetalles() {
             <div className={styles.producto_informacion}>
               <p className={styles.destaque}>${producto.precio} ARS</p>
               <p>Stock: {producto.stock - cantidad}  
-              {producto.stock==1  && <b> 🔥 ULTIMA UNIDAD</b> }</p>
+              {producto.stock==1  && <b className={styles.oferta}> 🔥 ULTIMA UNIDAD</b> }</p>
             </div>
             
             <div className={styles.descripcion}>

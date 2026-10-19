@@ -1,9 +1,5 @@
-*{
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
-}
-p{
+
+.producto p{
     margin: 0.1rem;
 }
 
@@ -47,7 +43,7 @@ p{
     letter-spacing: -0.5px;
     color: #252525;
 }
-b{
+.oferta{
     background-color: rgb(243, 125, 15);
     border-radius: 10px;
     margin-left: 8px;

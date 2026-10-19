@@ -1,4 +1,4 @@
-import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { Route, Routes } from "react-router-dom";
 import Inicio from "./pages/Inicio";
 import ProductoDetalles from "./pages/productoDetalles/ProductoDetalles";
 import NavigationBar from "./components/Navbar";
@@ -8,14 +8,14 @@ import CarritoDetalles from "./pages/carritoDetalles/CarritoDetalles";
 function App() {
   return <>
 
-    <BrowserRouter>
+
     <NavigationBar/>
       <Routes>
           <Route path="/" element={<Inicio/>}> </Route>
-          <Route path="/:id" element={<ProductoDetalles/>}> </Route>
+          <Route path="/producto/:id" element={<ProductoDetalles/>}> </Route>
           <Route path="/carrito" element={<CarritoDetalles/>}> </Route>
       </Routes>
-    </BrowserRouter>
+   
   </>;
 }
 

@@ -22,6 +22,11 @@
     justify-content: space-around;
 
 }
+.contenedorDeControl{
+    display: flex;  
+    min-width: 6vw;
+
+}
 .img_content{
     width: 8rem;
 }

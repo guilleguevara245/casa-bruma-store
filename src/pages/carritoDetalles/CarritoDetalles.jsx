@@ -1,9 +1,10 @@
+import { useState } from "react";
 import CarritoProducto from "../../components/carritoProducto/CarritoProducto";
 
 
 
 export default function CarritoDetalles() {
-    const storageProductos = JSON.parse(localStorage.getItem("carrito")) || [];
+    const [storageProductos, setStorageProductos] =useState(JSON.parse(localStorage.getItem("carrito")) || []); 
     console.log(storageProductos)
     //Object.entries > converir un objeto  en un array
     return (
@@ -14,6 +15,7 @@ export default function CarritoDetalles() {
             <CarritoProducto
                 id={producto.id}
                 cantidad={producto.cantidad}
+                setStorageProductos ={setStorageProductos}
             />
             )}
             
