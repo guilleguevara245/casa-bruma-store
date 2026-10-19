@@ -1,6 +1,6 @@
 import styles from "./productos.module.css"
 import { Card, Button, ListGroup, Row, Col, Form, InputGroup } from "react-bootstrap";
-import productos from "../../data/prooductos";
+import productos from "../../data/productos";
 import { Link } from "react-router-dom";
 import { useState, useEffect } from "react";
 
@@ -90,23 +90,22 @@ const ListadoProductos = () => {
           </Button>
         </div>
       ) : (
-        <Row xs={1} md={4} className="g-4">
+        <Row xs={1} sm={2} lg={3} xl={4} className="g-4">
           {catalogoOrdenado.map((producto) => (
             <Col key={producto.id}>
-              <Card>
-                <Card.Img variant="top" src={producto.imagen} />
+              <Card className="h-100">
+                <Card.Img variant="top" src={producto.imagen} className={styles.tarjetaImg} />
                 <Card.Body>
-                  <Card.Title>{producto.nombre}</Card.Title>
+                  <Card.Title className={styles.tarjetaTitulo}>{producto.nombre}</Card.Title>
                   <Card.Text>
                     <small className="text-muted">{producto.categoria}</small>
                   </Card.Text>
-                  <Card.Text>{producto.descBreve}</Card.Text>
+                  <Card.Text className={styles.tarjetaDesc}>{producto.descBreve}</Card.Text>
                 </Card.Body>
                 <Card.Footer>
                   <ListGroup variant="flush">
-                    <ListGroup.Item>{producto.precio}</ListGroup.Item>
+                    <ListGroup.Item>${producto.precio}</ListGroup.Item>
                     <ListGroup.Item>{stockSiHay(producto) ? producto.stock  : "No hay stock disponible"}</ListGroup.Item>
-                    <ListGroup.Item>talle : m</ListGroup.Item>
                   </ListGroup>
                 </Card.Footer>
                 {stockSiHay(producto) ? <Button variant="dark" size="md">

@@ -8,6 +8,7 @@
     text-decoration: none;
 }
 
+/* Barra de busqueda y filtro */
 .controles {
     display: flex;
     flex-wrap: wrap;
@@ -43,5 +44,30 @@
 .sinResultados {
     padding: 3rem 1rem;
     color: #2F3B3B;
+}
+
+/* Tarjetas */
+.tarjetaImg {
+    aspect-ratio: 1 / 1;
+    object-fit: contain;
+}
+
+.tarjetaTitulo,
+.tarjetaDesc {
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    line-clamp: 2;
+    overflow: hidden;
+}
+
+.tarjetaTitulo {
+    line-height: 1.2;
+    min-height: 2.4em;
+}
+
+.tarjetaDesc {
+    line-height: 1.5;
+    min-height: 3em;
 }
 
