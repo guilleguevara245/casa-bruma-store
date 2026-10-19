@@ -274,11 +274,11 @@ export const FormularioCompra = () => {
         </Modal.Header>
         <Modal.Body>¿Está seguro de realizar la compra?</Modal.Body>
         <Modal.Footer>
-          <Button variant="secondary" onClick={cancelarCompra}>
-            Cancelar
-          </Button>
           <Button variant="primary" onClick={confirmarCompra}>
             Confirmar
+          </Button>
+          <Button variant="secondary" onClick={cancelarCompra}>
+            Cancelar
           </Button>
         </Modal.Footer>
       </Modal>

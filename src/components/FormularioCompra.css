@@ -4,6 +4,8 @@
   margin-top: 2rem;
   display: flex;
   justify-content: center;
+  align-items: center;
+  flex-direction: column;
 }
 
 .formulario-box {
@@ -39,7 +41,18 @@
   padding: 0.75rem;
   font-size: 1.1rem;
   border-radius: 6px;
-  transition: background-color 0.3 ease;
+  transition: background-color 0.3s ease;
+}
+
+.btn-secondary {
+  background-color: #e63307;
+  border: none;
+  color: #fff;
+  width: 100%;
+  padding: 0.75rem;
+  font-size: 1.1rem;
+  border-radius: 6px;
+  transition: background-color 0.3s ease;
 }
 
 .btn-primary:hover {
