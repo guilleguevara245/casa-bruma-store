@@ -1,7 +1,10 @@
+import { Modal, Button } from "react-bootstrap";
+
 import { useState } from "react";
 
 const validate = (data) => {
   const newErrors = {};
+
   if (data.firstName === "") {
     newErrors.firstName = "El nombre es obligatorio";
   } else if (data.firstName.length > 50) {
@@ -32,7 +35,7 @@ const validate = (data) => {
   } else if (!/^[a-zA-ZÁÉÍÓÚáéíóúñÑ0-9\s\-\#\/]+$/.test(data.address)) {
     newErrors.address = "La dirección tiene caracteres invalidos";
   }
-  if (!data.modality) {
+  if (data.modality === "") {
     newErrors.modality = "La modalidad de entrega debe ser obligatoria";
   }
   if (data.message.length > 200) {
@@ -52,8 +55,8 @@ export const FormularioCompra = () => {
     modality: "",
     message: "",
   });
-
   const [errors, setErrors] = useState({});
+  const [showModal, setShowModal] = useState(false);
 
   console.log(formData);
 
@@ -83,11 +86,40 @@ export const FormularioCompra = () => {
     if (Object.keys(newErrors).length > 0) {
       console.log("Complete los campos faltantes");
       return;
+    } else {
+      setShowModal(true);
     }
-
-    console.log("Formulario Enviado!");
   };
 
+  const confirmarCompra = () => {
+    setShowModal(false);
+    alert("Compra confirmada");
+    console.log("Formulario Envidao");
+    setFormData({
+      firstName: "",
+      lastName: "",
+      email: "",
+      phone: "",
+      address: "",
+      modality: "",
+      message: "",
+    });
+  };
+
+  const cancelarCompra = () => {
+    setShowModal(false);
+    alert("Compra cancelada");
+    console.log("Formulario rechazado");
+    setFormData({
+      firstName: "",
+      lastName: "",
+      email: "",
+      phone: "",
+      address: "",
+      modality: "",
+      message: "",
+    });
+  };
   console.log(errors);
 
   return (
@@ -221,11 +253,22 @@ export const FormularioCompra = () => {
           <button type="submit" className="btn btn-primary">
             Enviar
           </button>
-          <button type="button" className="btn btn-secondary">
-            Cancelar
-          </button>
         </form>
       </div>
+      <Modal show={showModal} onHide={() => setShowModal(false)}>
+        <Modal.Header closeButton>
+          <Modal.Title>Confirmar compra</Modal.Title>
+        </Modal.Header>
+        <Modal.Body>¿Está seguro de realizar la compra?</Modal.Body>
+        <Modal.Footer>
+          <Button variant="secondary" onClick={cancelarCompra}>
+            Cancelar
+          </Button>
+          <Button variant="primary" onClick={confirmarCompra}>
+            Confirmar
+          </Button>
+        </Modal.Footer>
+      </Modal>
     </div>
   );
 };
