@@ -39,8 +39,6 @@ p{
     padding: 10px;
     max-width:900px ; 
 
-    min-height: 400px;
-
 }
 .destaque{
     font-family: inherit;
@@ -63,11 +61,15 @@ b{
     justify-content: center;
     align-items: center;
     text-align: center;
+    padding: 1rem 0;
 }
 .accionCarrito>p{
     margin: 0;
     text-align: center;
     width: 30px;
+}
+.agregarCarrito{
+    margin-left: 30px;
 }
 
 .producto_informacion{
@@ -100,7 +102,6 @@ b{
     justify-content: center;
     align-items: end;
     box-sizing: border-box;
-    flex: 1; /*acopla todo el espacio restante para el mismo*/
     
 }
 button{
