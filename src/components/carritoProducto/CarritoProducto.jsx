@@ -55,7 +55,7 @@ function CarritoProducto({id,cantidad,setStorageProductos}) {
         
         <div className={styles.contenedor_valores}>
             <div className={styles.valores}>
-                <Card.Title>{producto.nombre}</Card.Title>
+                <Card.Title className={styles.titulo}>{producto.nombre}</Card.Title>
                 <div className={styles.precios}>
                     <Card.Text>${producto.precio} ARS</Card.Text>
                     {cantidadActual>1 && <Card.Text>x ${producto.precio *cantidadActual } ARS</Card.Text>}

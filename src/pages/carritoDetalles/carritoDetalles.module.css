@@ -10,10 +10,8 @@
 .total{
     display: flex;
     justify-content: space-around;
-    width:800px;
+    min-width:80vw;
     padding-top: 1vw;
     font-size: 1.3rem;
 
-}@media (max-width: 768px) {
-   
 }

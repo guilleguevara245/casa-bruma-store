@@ -10,8 +10,8 @@
 }
 .contenedor_valores{
 
-    min-width:50vw ;
-
+    min-width:50vw ;    
+    
 }
 .cantidad{
     display: flex;
@@ -31,10 +31,24 @@
 
 }
 .contenedorDanger{
-     display: flex;  
-         justify-content: center;
+    display: flex;  
+    justify-content: center;
     align-items: center;
 }
 .img_content{
     width: 8rem;
+}
+@media (max-width: 768px) {
+    .titulo{
+        padding: 1rem;
+    }
+   .img_content{
+    width: 6rem;
+}
+.contenedorDeControl{
+    padding-left: 1rem;
+}
+.contenedorDanger{
+    padding-right: 1rem;
+}
 }
