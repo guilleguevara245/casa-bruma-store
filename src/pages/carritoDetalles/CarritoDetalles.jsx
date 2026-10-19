@@ -4,6 +4,7 @@ import styles from "./carritoDetalles.module.css"
 
 import Button from 'react-bootstrap/Button';
 import MensajeConfirmacion from "../../components/MensajeConfirmacion";
+import IrAtras from "../../components/irAtras/IrAtras";
 export default function CarritoDetalles() {
     const [storageProductos, setStorageProductos] =useState(JSON.parse(localStorage.getItem("carrito")) || []); 
     const [confirmar,setConfirmar] =useState(false)
@@ -14,6 +15,7 @@ export default function CarritoDetalles() {
     return (
         <>
         {confirmar && <MensajeConfirmacion onConfirmar={onConfirmar}></MensajeConfirmacion>}
+    <IrAtras></IrAtras>
     <div className={styles.contenedor}>
         <div className={styles.titulo}>
             <h1>Carrito</h1>

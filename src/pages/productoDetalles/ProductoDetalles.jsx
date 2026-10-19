@@ -5,6 +5,8 @@ import { useState } from "react";
 import Button from 'react-bootstrap/Button';
 import Alert from 'react-bootstrap/Alert';
 import Image from 'react-bootstrap/Image';
+
+import IrAtras from "../../components/irAtras/IrAtras";
 function ProductoDetalles() {
     //aplico renderizador condicional "producto.stock == 1 &&"
     const {id} =useParams();
@@ -41,7 +43,10 @@ function ProductoDetalles() {
     localStorage.setItem("carrito", JSON.stringify(carrito));
   }
   return (
+    <>
+    <IrAtras></IrAtras>
     <div className={styles.producto}>
+       
         <div className={styles.img_content}>
           <Image src={producto.imagen} thumbnail />
         </div>
@@ -79,6 +84,7 @@ function ProductoDetalles() {
 
         </div>
     </div>
+    </>
   )
 }
 

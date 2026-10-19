@@ -2,6 +2,11 @@
 .producto p{
     margin: 0.1rem;
 }
+.atras{
+    display: flex;
+    padding-top: 1.5vw  ;
+    padding-left: 5vw
+}
 
 .producto{
     display: grid;
@@ -9,7 +14,7 @@
     gap: 5rem;
     align-items: start;
     max-width: 1400px;
-    margin: 3rem auto;
+    margin: 1rem auto;
 
 }
 .img_content{
