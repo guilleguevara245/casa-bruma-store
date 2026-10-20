@@ -1,5 +1,5 @@
 import { Modal, Button } from "react-bootstrap";
-import "./FormularioCompra.css";
+import style from "./FormularioCompra.module.css";
 
 import { useState } from "react";
 
@@ -35,7 +35,7 @@ const validate = (data) => {
   }
   if (data.address === "") {
     newErrors.address = "La dirección es obligatoria";
-  } else if (!/^[a-zA-ZÁÉÍÓÚáéíóúñÑ0-9\s\-\#\/]+$/.test(data.address)) {
+  } else if (!/^[a-zA-ZÁÉÍÓÚáéíóúñÑ0-9\s\-#/.]+$/.test(data.address)) {
     newErrors.address = "La dirección tiene caracteres invalidos";
   }
   if (data.modality === "") {
@@ -126,19 +126,19 @@ export const FormularioCompra = () => {
   console.log(errors);
 
   return (
-    <div className="formulario-container">
-      <div className="formulario-box">
+    <div className={style.formularioContainer}>
+      <div className={style.formularioBox}>
         <form onSubmit={handleSubmit} noValidate>
           <div className="row mb-3">
             <div className="col-md-6">
-              <label htmlFor="firstName" className="form-label">
+              <label htmlFor="firstName" className={`form-label ${style.formLabel}`}>
                 Nombres
               </label>
               <input
                 type="text"
                 id="firstName"
                 name="firstName"
-                className={`form-control ${errors.firstName ? "is-invalid" : ""}`}
+                className={`form-control ${style.formControl} ${errors.firstName ? "is-invalid" : ""}`}
                 value={formData.firstName}
                 onChange={handleChange}
               />
@@ -150,14 +150,14 @@ export const FormularioCompra = () => {
             </div>
 
             <div className="col-md-6">
-              <label htmlFor="lastName" className="form-label">
+              <label htmlFor="lastName" className={`form-label ${style.formLabel}`}>
                 Apellidos
               </label>
               <input
-                type="lastName"
+                type="text"
                 id="lastName"
                 name="lastName"
-                className={`form-control ${errors.lastName ? "is-invalid" : ""}`}
+                className={`form-control ${style.formControl} ${errors.lastName ? "is-invalid" : ""}`}
                 value={formData.lastName}
                 onChange={handleChange}
               />
@@ -171,14 +171,14 @@ export const FormularioCompra = () => {
 
           <div className="row mb-3">
             <div className="col-md-6">
-              <label htmlFor="email" className="form-label">
+              <label htmlFor="email" className={`form-label ${style.formLabel}`}>
                 Email
               </label>
               <input
                 type="email"
                 id="email"
                 name="email"
-                className={`form-control ${errors.email ? "is-invalid" : ""}`}
+                className={`form-control ${style.formControl} ${errors.email ? "is-invalid" : ""}`}
                 value={formData.email}
                 onChange={handleChange}
               />
@@ -188,15 +188,15 @@ export const FormularioCompra = () => {
             </div>
 
             <div className="col-md-6">
-              <label htmlFor="phone" className="form-label">
+              <label htmlFor="phone" className={`form-label ${style.formLabel}`}>
                 Teléfono
               </label>
               <input
-                type="phone"
+                type="tel"
                 id="phone"
                 name="phone"
                 placeholder="+541123456789"
-                className={`form-control ${errors.phone ? "is-invalid" : ""}`}
+                className={`form-control ${style.formControl} ${errors.phone ? "is-invalid" : ""}`}
                 value={formData.phone}
                 onChange={handleChange}
               />
@@ -207,24 +207,24 @@ export const FormularioCompra = () => {
           </div>
 
           <div className="mb-3">
-            <label htmlFor="address" className="form-label">
+            <label htmlFor="address" className={`form-label ${style.formLabel}`}>
               Dirección
             </label>
             <input
-              type="address"
+              type="text"
               id="address"
               name="address"
-              className={`form-control ${errors.address ? "is-invalid" : ""}`}
+              className={`form-control ${style.formControl} ${errors.address ? "is-invalid" : ""}`}
               value={formData.address}
               onChange={handleChange}
             />
-            {errors.phone && (
+            {errors.address && (
               <div className="invalid-feedback d-block">{errors.address}</div>
             )}
           </div>
 
           <div className="mb-3">
-            <label htmlFor="modality" className="form-label">
+            <label htmlFor="modality" className={`form-label ${style.formLabel}`}>
               Metodo de Entrega
             </label>
             <select
@@ -232,7 +232,7 @@ export const FormularioCompra = () => {
               id="modality"
               value={formData.modality}
               onChange={handleChange}
-              className={`form-select ${errors.modality ? "is-invalid" : ""}`}
+              className={`form-select ${style.formSelect} ${errors.modality ? "is-invalid" : ""}`}
             >
               <option value="">Metodo de Entrega</option>
               <option value="presencial">Retiro en Sucursal</option>
@@ -244,7 +244,7 @@ export const FormularioCompra = () => {
           </div>
 
           <div className="mb-3">
-            <label htmlFor="message" className="form-label">
+            <label htmlFor="message" className={`form-label ${style.formLabel}`}>
               Mensage o Aclaración
             </label>
             <textarea
@@ -252,7 +252,7 @@ export const FormularioCompra = () => {
               id="message"
               value={formData.message}
               onChange={handleChange}
-              className={`form-select ${errors.message ? "is-invalid" : ""}`}
+              className={`form-control ${style.formControl} ${errors.message ? "is-invalid" : ""}`}
               rows="3"
               placeholder="Escriba aquí cualquier aclaración sobre la entrega..."
             ></textarea>
@@ -262,7 +262,7 @@ export const FormularioCompra = () => {
           </div>
 
           <div className="text-center mt-4">
-            <button type="submit" className="btn btn-primary w-100">
+            <button type="submit" className={`btn btn-primary w-100 ${style.btnPrimary}`}>
               Enviar
             </button>
           </div>
@@ -274,10 +274,10 @@ export const FormularioCompra = () => {
         </Modal.Header>
         <Modal.Body>¿Está seguro de realizar la compra?</Modal.Body>
         <Modal.Footer>
-          <Button variant="primary" onClick={confirmarCompra}>
+          <Button variant="primary" className={style.btnPrimary} onClick={confirmarCompra}>
             Confirmar
           </Button>
-          <Button variant="secondary" onClick={cancelarCompra}>
+          <Button variant="secondary" className={style.btnSecondary} onClick={cancelarCompra}>
             Cancelar
           </Button>
         </Modal.Footer>
