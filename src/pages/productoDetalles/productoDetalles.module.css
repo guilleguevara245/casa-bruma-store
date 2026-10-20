@@ -1,0 +1,123 @@
+
+.producto p{
+    margin: 0.1rem;
+}
+.atras{
+    display: flex;
+    padding-top: 1.5vw  ;
+    padding-left: 5vw
+}
+
+.producto{
+    display: grid;
+    grid-template-columns: 0.9fr 1.2fr;
+    gap: 5rem;
+    align-items: start;
+    max-width: 1400px;
+    margin: 1rem auto;
+
+}
+.img_content{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.encabezado{
+    display: flex;
+    flex-direction: column;
+    padding: 0;
+    margin: 0;
+    font-size: 1rem;
+    border-bottom: black solid 1px;
+}
+.producto_contenedor{
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 0px 0px rgba(0, 0, 0, 0.45);
+    border-radius: 10px;
+    margin: 3rem 10px 10px 10px;
+    padding: 10px;
+    max-width:900px ; 
+
+}
+.destaque{
+    font-family: inherit;
+    font-size: 1.8rem;
+    font-weight: 600;
+    letter-spacing: -0.5px;
+    color: #252525;
+}
+.oferta{
+    background-color: rgb(243, 125, 15);
+    border-radius: 10px;
+    margin-left: 8px;
+    padding: 3px 6px;
+    color: white;
+    font-size: 0.8rem;
+}
+
+.accionCarrito{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 1rem 0;
+}
+.accionCarrito>p{
+    margin: 0;
+    text-align: center;
+    width: 30px;
+}
+.agregarCarrito{
+    margin-left: 30px;
+}
+
+.producto_informacion{
+    margin:1em 0 ;
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+    justify-content:space-around;
+
+    
+}
+
+
+.descripcion{
+    border-left: 1px  solid black;
+    border-left: 1px  solid black;
+    max-width: 700px;
+    font-size: 1rem;
+    flex: 1; /*toma extra del ancho por si la descripcion es larga*/
+}
+.descripcion>p{
+    width: 100%;
+    height: 100%;
+    padding: 5px;
+    overflow-wrap: anywhere; /* se corta donde haga falta para mantenerse dentro del párrafo.*/
+
+}
+.producto_carrito{
+    display: flex;
+    justify-content: center;
+    align-items: end;
+    box-sizing: border-box;
+    
+}
+button{
+    padding: 5px;
+    margin-left:5px ;
+}
+button:nth-child(4){
+    border: 1px solid black;
+    border-radius: 10px;
+}
+@media (max-width: 768px) {
+    .producto h1{
+        font-size: 2.5rem;
+    }
+    .producto{
+            grid-template-columns: 1.2fr; /*se hace una sola columna de grilla*/
+    }
+}
