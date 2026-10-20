@@ -27,7 +27,7 @@ const TarjetaProducto = ({ producto }) => {
         <Link to="/carrito" className={styles.Link}>Agregar al carrito</Link>
       </Button> :
       <Button variant="secondary" size="md" className={styles.Link}>
-        no hay stock disponible
+        No hay stock disponible
       </Button>
       }
       <Button variant="light" size="md">
