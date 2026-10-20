@@ -1,5 +1,6 @@
 import { Route, Routes } from "react-router-dom";
 import Inicio from "./pages/Inicio";
+import Productos from "./pages/productos/Productos.jsx";
 import ProductoDetalles from "./pages/productoDetalles/ProductoDetalles";
 import NavigationBar from "./components/Navbar";
 import 'bootstrap/dist/css/bootstrap.min.css';
@@ -12,11 +13,11 @@ function App() {
     <NavigationBar/>
       <Routes>
           <Route path="/" element={<Inicio/>}> </Route>
+          <Route path="/productos" element={<Productos />} />
           <Route path="/producto/:id" element={<ProductoDetalles/>}> </Route>
           <Route path="/carrito" element={<CarritoDetalles/>}> </Route>
       </Routes>
    
   </>;
 }
-
 export default App;

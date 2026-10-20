@@ -8,6 +8,8 @@ Casa Bruma es una aplicación web que simula una tienda online de indumentaria. 
 - JavaScript
 - Vite
 - React Bootstrap y Bootstrap
+- React Router DOM
+- Google Fonts (Cormorant Garamond y Jost)
 - ESLint
 
 ## Instalación y ejecución
@@ -41,4 +43,5 @@ Casa Bruma es una aplicación web que simula una tienda online de indumentaria. 
 ## Integrantes
 
 - Guillermo Guevara
-- Elias Ezequiel llorens 
+- Elias Ezequiel llorens
+- Tomas Valentin Cardenas

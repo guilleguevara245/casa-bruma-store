@@ -21,12 +21,12 @@ const productos = [
  },
  {
  id: 3,
- nombre: "Camisa negra",
+ nombre: "Camisa blanca D&G",
  categoria: "Indumentaria",
  precio: 1200,
  imagen: "/img/remera.webp",
  descripcion: "Remera clásica de diseño versátil, confeccionada con tela suave y cómoda para el uso diario. Su corte moderno y su estilo minimalista la convierten en una prenda ideal para combinar con jeans, pantalones o bermudas. Perfecta para cualquier ocasión, ofrece comodidad y estilo durante todo el día.",
- descBreve: "Camisa negra lisa con botones dorados ideal para velorios",
+ descBreve: "Camisa blanca lisa marca Dolce & Gabanna",
  stock: 0
  },
  {

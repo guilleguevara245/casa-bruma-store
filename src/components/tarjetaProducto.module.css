@@ -1,0 +1,38 @@
+.Link {
+    color: white;
+    text-decoration: none;
+}
+
+.LinkBtnBlanco {
+    color: black;
+    text-decoration: none;
+}
+/* Tarjeta */
+.tarjetaImg {
+    aspect-ratio: 1 / 1;
+    object-fit: contain;
+}
+
+.tarjetaTitulo,
+.tarjetaDesc {
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    line-clamp: 2;
+    overflow: hidden;
+}
+
+.tarjetaTitulo {
+    line-height: 1.2;
+    min-height: 2.4em;
+}
+
+.tarjetaDesc {
+    line-height: 1.5;
+    min-height: 3em;
+}
+
+/* Items del footer */
+.footerItem {
+    background-color: transparent;
+}
