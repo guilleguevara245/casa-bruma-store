@@ -19,8 +19,8 @@ const TarjetaProducto = ({ producto }) => {
       </Card.Body>
       <Card.Footer>
         <ListGroup variant="flush">
-          <ListGroup.Item>${producto.precio}</ListGroup.Item>
-          <ListGroup.Item>{stockSiHay(producto) ? producto.stock  : "No hay stock disponible"}</ListGroup.Item>
+          <ListGroup.Item className={styles.footerItem}>${producto.precio}</ListGroup.Item>
+          <ListGroup.Item className={styles.footerItem}>{stockSiHay(producto) ? producto.stock  : "No hay stock disponible"}</ListGroup.Item>
         </ListGroup>
       </Card.Footer>
       {stockSiHay(producto) ? <Button variant="dark" size="md">
