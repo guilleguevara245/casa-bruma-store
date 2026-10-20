@@ -23,14 +23,14 @@ const TarjetaProducto = ({ producto }) => {
           <ListGroup.Item className={styles.footerItem}>{stockSiHay(producto) ? producto.stock  : "No hay stock disponible"}</ListGroup.Item>
         </ListGroup>
       </Card.Footer>
-      {stockSiHay(producto) ? <Button variant="dark" size="md">
+      {stockSiHay(producto) ? <Button variant="dark" size="md" className={styles.Link}>
         <Link to="/carrito" className={styles.Link}>Agregar al carrito</Link>
       </Button> :
       <Button variant="secondary" size="md" className={styles.Link}>
         No hay stock disponible
       </Button>
       }
-      <Button variant="light" size="md">
+      <Button variant="light" size="md" className={styles.LinkBtnBlanco}>
         <Link to={`/producto/${producto.id}`} className={styles.LinkBtnBlanco}>Ir al producto</Link>
       </Button>
     </Card>

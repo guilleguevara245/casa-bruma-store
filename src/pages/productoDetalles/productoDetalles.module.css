@@ -105,11 +105,11 @@
     box-sizing: border-box;
     
 }
-button{
+.producto button{
     padding: 5px;
     margin-left:5px ;
 }
-button:nth-child(4){
+.producto button:nth-child(4){
     border: 1px solid black;
     border-radius: 10px;
 }
