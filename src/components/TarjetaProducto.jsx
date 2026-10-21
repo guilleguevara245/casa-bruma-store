@@ -1,12 +1,40 @@
 import styles from "./tarjetaProducto.module.css"
 import { Card, Button, ListGroup } from "react-bootstrap";
 import { Link } from "react-router-dom";
+import { useState, useEffect } from "react";
 
 const stockSiHay = (producto) => {
   return producto.stock > 0 ;
 };
 
 const TarjetaProducto = ({ producto }) => {
+  const [aviso, setAviso] = useState(null);
+
+  // El aviso del boton vuelve al texto original despues de un momento
+  useEffect(() => {
+    if (!aviso) return;
+    const timer = setTimeout(() => setAviso(null), 2500);
+    return () => clearTimeout(timer);
+  }, [aviso]);
+
+  // Suma una unidad del producto al carrito, sin pasarse del stock
+  const agregarAlCarrito = () => {
+    const carrito = JSON.parse(localStorage.getItem("carrito")); //Shotout a elias que hizo esto ;D
+    const item = carrito.find((e) => e.id === producto.id);
+
+    if (!item) {
+      carrito.push({ id: producto.id, cantidad: 1, precio: producto.precio });
+    } else if (item.cantidad < producto.stock) {
+      item.cantidad += 1;
+    } else {
+      setAviso("Sin más stock");
+      return;
+    }
+
+    localStorage.setItem("carrito", JSON.stringify(carrito));
+    setAviso("Agregado al carrito");
+  };
+
   return (
     <Card className="h-100">
       <Card.Img variant="top" src={producto.imagen} className={styles.tarjetaImg} />
@@ -23,8 +51,8 @@ const TarjetaProducto = ({ producto }) => {
           <ListGroup.Item className={styles.footerItem}>{stockSiHay(producto) ? producto.stock  : "No hay stock disponible"}</ListGroup.Item>
         </ListGroup>
       </Card.Footer>
-      {stockSiHay(producto) ? <Button variant="dark" size="md" className={styles.Link}>
-        <Link to="/carrito" className={styles.Link}>Agregar al carrito</Link>
+      {stockSiHay(producto) ? <Button variant="dark" size="md" className={styles.Link} onClick={agregarAlCarrito}>
+        {aviso ?? "Agregar al carrito"}
       </Button> :
       <Button variant="secondary" size="md" className={styles.Link}>
         No hay stock disponible
