@@ -26,6 +26,7 @@ function NavigationBar() {
           <Nav className="ms-auto">
             <Link to="/" onClick={cerrarMenu} className={location.pathname === "/" ? `nav-link ${styles.link} ${styles.activo}` : `nav-link ${styles.link}`}>Inicio</Link>
             <NavLink to="/productos" onClick={cerrarMenu} className={claseLink}>Productos</NavLink>
+            <NavLink to="/nosotros" onClick={cerrarMenu} className={claseLink}>Nosotros</NavLink>
             <NavLink to="/carrito" onClick={cerrarMenu} className={claseLink}>Carrito</NavLink>
             <NavLink to="/contacto" onClick={cerrarMenu} className={claseLink}>Contacto</NavLink>
           </Nav>
