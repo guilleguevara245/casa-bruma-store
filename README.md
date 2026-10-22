@@ -2,6 +2,12 @@
 
 Casa Bruma es una aplicación web que simula una tienda online de indumentaria. Permite explorar un catálogo de productos, ver el detalle de cada uno, armar un carrito de compras y completar una compra simulada.
 
+## Deploy
+
+La tienda está publicada y se puede ver en línea:
+
+🔗 [Ver Casa Bruma en línea](https://casa-bruma-store.vercel.app/)
+
 ## Tecnologías utilizadas
 
 - React
@@ -43,6 +49,6 @@ Casa Bruma es una aplicación web que simula una tienda online de indumentaria. 
 ## Integrantes
 
 - Guillermo Guevara
-- Elias Ezequiel llorens
+- Elias Ezequiel Llorens
 - Tomas Valentin Cardenas
 - Nicolás Alexandro Medina Cabral
