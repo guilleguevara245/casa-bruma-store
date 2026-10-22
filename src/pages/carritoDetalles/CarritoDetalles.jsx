@@ -5,6 +5,7 @@ import styles from "./carritoDetalles.module.css"
 import Button from 'react-bootstrap/Button';
 import MensajeConfirmacion from "../../components/MensajeConfirmacion";
 import IrAtras from "../../components/irAtras/IrAtras";
+
 export default function CarritoDetalles() {
     const [storageProductos, setStorageProductos] =useState(JSON.parse(localStorage.getItem("carrito")) || []); 
     const [confirmar,setConfirmar] =useState(false)
@@ -14,8 +15,11 @@ export default function CarritoDetalles() {
         setStorageProductos([])
     }
     function confirmarCompra(){
-        setConfirmar(true)
-        setContadoresConfirmacion(contadoresConfirmacion+1)
+        if(localStorage.getItem("carrito") && JSON.parse(localStorage.getItem("carrito")).length>0){
+  
+            setConfirmar(true)
+            setContadoresConfirmacion(contadoresConfirmacion+1)
+        }
     }
     return (
         <>
@@ -39,7 +43,7 @@ export default function CarritoDetalles() {
             <p>Total :${storageProductos.reduce((total, e) => total + (Number(e.precio) *e.cantidad), 0)} ARS</p>
             <Button variant="primary" onClick={()=>confirmarCompra()}>Confirmar</Button>
         </div>
-
+       
     </div>
     </>
   )

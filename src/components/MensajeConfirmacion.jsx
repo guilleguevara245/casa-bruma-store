@@ -1,10 +1,12 @@
 import { useState } from 'react';
+import { FormularioCompra } from './FormularioCompra';
 
 function MensajeConfirmacion({onConfirmar}) {
   const [mostrar, setMostrar] = useState(true);
+  const [mostrarFormulario, setMostrarElFormulario] = useState(false)
     function desactivar(){
-        onConfirmar()
         setMostrar(false)
+        setMostrarElFormulario(true)
     }
   return (
     <>
@@ -25,7 +27,10 @@ function MensajeConfirmacion({onConfirmar}) {
       </div>
     </div>
     </div>
-    </div>
+    </div> 
+        
+        }{
+          mostrarFormulario && <FormularioCompra onCompra={onConfirmar}></FormularioCompra>
         }
     </>
   );

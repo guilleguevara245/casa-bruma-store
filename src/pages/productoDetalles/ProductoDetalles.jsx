@@ -37,7 +37,7 @@ function ProductoDetalles({setRebotar}) {
           );
                                            //pero reemplaza el valor de cantidad por el nuevo valor de cantidad.
       }                                    //Si la condición es falsa, devuelve el objeto e tal como está, sin cambiar sus propiedades.
-        setRebotar(prev => prev + 1);
+        setRebotar(prev => prev + 1); // suma para indicar que hubo un cambio, se agrego un elemento.
       }
      else{
         if(succes){

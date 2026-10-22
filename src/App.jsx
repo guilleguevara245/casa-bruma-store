@@ -12,7 +12,7 @@ import styles from "./App.module.css";
 
 function App() {
   const [modoOscuro, setModoOscuro] = useState(localStorage.getItem("modo") === "oscuro");
-  const [rebote, setRebotar] = useState(0);
+  const [rebote, setRebotar] = useState(0); //cada suma de cantidad crea una nueva instancia de img como esta mantiene la key, se inicia con animacion salto
   function alternarModo() {
     const nuevoModo = !modoOscuro;
     setModoOscuro(nuevoModo);

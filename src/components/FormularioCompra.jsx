@@ -48,7 +48,7 @@ const validate = (data) => {
   return newErrors;
 };
 
-export const FormularioCompra = () => {
+export const FormularioCompra = ({onCompra}) => {
   const [formData, setFormData] = useState({
     firstName: "",
     lastName: "",
@@ -60,9 +60,12 @@ export const FormularioCompra = () => {
   });
   const [errors, setErrors] = useState({});
   const [showModal, setShowModal] = useState(false);
-
+  const [desactivar,setDesactivar] =useState(true)
   console.log(formData);
-
+  function compra(){
+  onCompra()
+    setDesactivar(false)
+  }
   const handleChange = (event) => {
     console.log("handleChange", {
       value: event.target.value,
@@ -95,8 +98,8 @@ export const FormularioCompra = () => {
   };
 
   const confirmarCompra = () => {
+    compra()
     setShowModal(false);
-    alert("Compra confirmada");
     console.log("Formulario Envidao");
     setFormData({
       firstName: "",
@@ -126,7 +129,8 @@ export const FormularioCompra = () => {
   console.log(errors);
 
   return (
-    <div className={style.formularioContainer}>
+    <>
+    { desactivar && <div className={style.formularioContainer}>
       <div className={style.formularioBox}>
         <form onSubmit={handleSubmit} noValidate>
           <div className="row mb-3">
@@ -283,5 +287,8 @@ export const FormularioCompra = () => {
         </Modal.Footer>
       </Modal>
     </div>
+
+    }
+    </>
   );
 };
