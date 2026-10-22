@@ -46,20 +46,23 @@
     }
    .img_content{
     width: 6rem;
-}
 
-.contenedorDeControl{
-    padding: 0 2rem;
+    }
+    .contenedor{
+            padding-left: 0vw;
+    }
+    .contenedorDeControl{
+        padding: 0 2rem;
 
-}
-.contenedorDeControl button{
-    padding: 10px;
-}
-.contenedorDeControl button:nth-child(2){
-    margin-left: 15px;
-   
-}
-.contenedorDanger{
-    padding-right: 1rem;
-}
+    }
+    .contenedorDeControl button{
+        padding: 10px;
+    }
+    .contenedorDeControl button:nth-child(2){
+        margin-left: 15px;
+    
+    }
+    .contenedorDanger{
+        padding-right: 1rem;
+    }
 }
