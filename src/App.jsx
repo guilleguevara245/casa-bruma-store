@@ -6,6 +6,7 @@ import NavigationBar from "./components/Navbar";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import CarritoDetalles from "./pages/carritoDetalles/CarritoDetalles";
 import Contacto from "./pages/Contacto";
+import Nosotros from "./pages/Nosotros";
 
 function App() {
   return <>
@@ -13,6 +14,7 @@ function App() {
 
     <NavigationBar/>
       <Routes>
+          <Route path="/nosotros" element={<Nosotros />} />
           <Route path="/" element={<Inicio/>}> </Route>
           <Route path="/productos" element={<Productos />} />
           <Route path="/producto/:id" element={<ProductoDetalles/>}> </Route>
