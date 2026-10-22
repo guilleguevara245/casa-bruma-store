@@ -1,0 +1,30 @@
+.encabezado {
+  background-color: var(--cb-barra);
+  color: var(--cb-barra-texto);
+  text-align: center;
+  padding: 3rem 1rem;
+}
+
+.encabezado h1 {
+  font-size: 3rem;
+}
+
+.titulo {
+  font-family: "Cormorant Garamond", serif;
+  font-size: 2rem;
+}
+
+.valor h2 {
+  font-family: "Cormorant Garamond", serif;
+  font-size: 1.6rem;
+}
+
+.icono {
+  width: 56px;
+  margin-bottom: 1rem;
+}
+
+.iconoEncabezado {
+  width: 90px;
+  margin-bottom: 1rem;
+}

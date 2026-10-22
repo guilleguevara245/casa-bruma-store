@@ -1,0 +1,25 @@
+.app {
+  min-height: 100vh;
+  background-color: var(--cb-fondo);
+  color: var(--cb-texto);
+}
+
+.app.oscuro {
+  --cb-fondo: #1A2120;
+  --cb-texto: #E3E6E2;
+  --cb-superficie: #243030;
+  --cb-superficie-suave: #2C3A39;
+  --cb-borde: #8FA09D;
+  --cb-barra: #131918;
+  --cb-barra-texto: #EAECE9;
+  --cb-boton: #D8DDD9;
+  --cb-boton-hover: #FFFFFF;
+  --cb-boton-texto: #1A2120;
+  --cb-acento: #FF5A36;
+  --cb-sombra: rgba(0, 0, 0, 0.5);
+
+  --bs-body-bg: var(--cb-fondo);
+  --bs-body-color: var(--cb-texto);
+  --bs-card-bg: var(--cb-superficie);
+  --bs-card-cap-bg: var(--cb-superficie-suave);
+}

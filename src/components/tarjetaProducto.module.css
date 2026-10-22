@@ -1,11 +1,13 @@
 .Link {
     color: white;
     text-decoration: none;
+    border-radius: 0;
 }
 
 .LinkBtnBlanco {
     color: black;
     text-decoration: none;
+    border-radius: 0;
 }
 /* Tarjeta */
 .tarjetaImg {

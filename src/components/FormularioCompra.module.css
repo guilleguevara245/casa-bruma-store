@@ -1,0 +1,69 @@
+@import url("https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500&family=Jost:wght@400&display=swap");
+
+.formularioContainer {
+  margin-top: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.formularioBox {
+  width: 100%;
+  background-color: var(--cb-superficie);
+  color: var(--cb-texto);
+  font-family: "Jost", sans-serif;
+  border-radius: 10px;
+  padding: 2rem;
+  box-shadow: 0 4px 12px var(--cb-sombra);
+}
+
+.formLabel {
+  font-weight: 600;
+  font-family: "Cormorant Garamond", serif;
+  color: var(--cb-texto);
+}
+
+.formControl,
+.formSelect {
+  border-radius: 6px;
+  border: 1px solid var(--cb-borde);
+  background-color: var(--cb-superficie-suave);
+  color: var(--cb-texto);
+  padding: 0.75rem;
+  font-size: 1rem;
+  font-family: "Jost", sans-serif;
+}
+
+.btnPrimary {
+  background-color: var(--cb-boton);
+  border: none;
+  color: var(--cb-boton-texto);
+  width: 100%;
+  padding: 0.75rem;
+  font-size: 1.1rem;
+  border-radius: 6px;
+  transition: background-color 0.3s ease;
+}
+
+.btnSecondary {
+  background-color: var(--cb-acento);
+  border: none;
+  color: #fff;
+  width: 100%;
+  padding: 0.75rem;
+  font-size: 1.1rem;
+  border-radius: 6px;
+  transition: background-color 0.3s ease;
+}
+
+.btnPrimary:hover {
+  background-color: var(--cb-boton-hover);
+}
+
+@media (min-width: 992px) {
+  .formularioBox {
+    max-width: 700px;
+    margin: auto;
+  }
+}

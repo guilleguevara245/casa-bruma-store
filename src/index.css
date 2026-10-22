@@ -1,8 +1,25 @@
 @import url("https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500&family=Jost:wght@400&display=swap");
 
+/* Colores base de Casa Bruma (modo claro).
+   El modo oscuro los redefine en App.module.css. */
+:root {
+  --cb-fondo: #EAECE9;
+  --cb-texto: #2F3B3B;
+  --cb-superficie: #FFFFFF;
+  --cb-superficie-suave: #F6F7F5;
+  --cb-borde: #2F3B3B;
+  --cb-barra: #26302F;
+  --cb-barra-texto: #EAECE9;
+  --cb-boton: #2F3B3B;
+  --cb-boton-hover: #1F2A2A;
+  --cb-boton-texto: #FFFFFF;
+  --cb-acento: #E63307;
+  --cb-sombra: rgba(0, 0, 0, 0.1);
+}
+
 body {
-  background-color: #EAECE9;
-  color: #2F3B3B;
+  background-color: var(--cb-fondo);
+  color: var(--cb-texto);
   font-family: "Jost", sans-serif;
 }
 

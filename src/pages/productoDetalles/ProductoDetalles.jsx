@@ -74,9 +74,11 @@ function ProductoDetalles() {
             <div className={styles.producto_carrito}>
                 <div className={styles.accionCarrito}>
                   
-                  <Button variant="light"  onClick={()=>cantidad>0?setCantidad(cantidad-1):setCantidad(0)}>-</Button>
+                  <div className={styles.controladorContenedor}>
+                    <Button variant="light" className={styles.botones} onClick={()=>cantidad>0?setCantidad(cantidad-1):setCantidad(0)}>-</Button>
                   <p>{cantidad} </p>
-                  <Button variant="light"  onClick={()=>cantidad<producto.stock?setCantidad(cantidad+1):setCantidad(cantidad)}>+</Button>
+                  <Button variant="light" className={styles.botones} onClick={()=>cantidad<producto.stock?setCantidad(cantidad+1):setCantidad(cantidad)}>+</Button>
+                  </div>
                   <Button variant="light"className={styles.agregarCarrito} onClick={agregarLocalStorage}>agregar al carrito</Button>
                 </div>
             </div>
