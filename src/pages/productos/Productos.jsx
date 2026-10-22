@@ -22,7 +22,6 @@ const ListadoProductos = () => {
   const catalogoFilt = productos.filter((producto) => producto.nombre.toLowerCase().includes(busquedaAplicada.toLowerCase().trim()))
   const hayBusqueda = busquedaAplicada.trim() !== ''
 
-  // Se copia el array con [...] porque sort() modifica el original
   const catalogoOrdenado = orden === 'ninguno'
     ? catalogoFilt
     : [...catalogoFilt].sort((a, b) =>

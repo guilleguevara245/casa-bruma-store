@@ -1,6 +1,6 @@
 .encabezado {
-  background-color: #26302F;
-  color: #EAECE9;
+  background-color: var(--cb-barra);
+  color: var(--cb-barra-texto);
   text-align: center;
   padding: 3rem 1rem;
 }
