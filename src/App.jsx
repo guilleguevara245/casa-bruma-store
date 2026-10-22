@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { Route, Routes } from "react-router-dom";
 import Inicio from "./pages/Inicio";
 import Productos from "./pages/productos/Productos.jsx";
@@ -6,20 +7,33 @@ import NavigationBar from "./components/Navbar";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import CarritoDetalles from "./pages/carritoDetalles/CarritoDetalles";
 import Contacto from "./pages/Contacto";
+import Nosotros from "./pages/Nosotros";
+import styles from "./App.module.css";
+
 
 function App() {
-  return <>
+  const [modoOscuro, setModoOscuro] = useState(localStorage.getItem("modo") === "oscuro");
+  const [rebote, setRebotar] = useState(0); //cada suma de cantidad crea una nueva instancia de img como esta mantiene la key, se inicia con animacion salto
+  function alternarModo() {
+    const nuevoModo = !modoOscuro;
+    setModoOscuro(nuevoModo);
+    localStorage.setItem("modo", nuevoModo ? "oscuro" : "claro");
+  }
 
 
-    <NavigationBar/>
+  return <div className={`${styles.app} ${modoOscuro ? styles.oscuro : ""}`} data-bs-theme={modoOscuro ? "dark" : "light"}>
+
+
+    <NavigationBar modoOscuro={modoOscuro} alternarModo={alternarModo} rebotar={rebote}/>
       <Routes>
+          <Route path="/nosotros" element={<Nosotros />} />
           <Route path="/" element={<Inicio/>}> </Route>
-          <Route path="/productos" element={<Productos />} />
-          <Route path="/producto/:id" element={<ProductoDetalles/>}> </Route>
+          <Route path="/productos" element={<Productos setRebotar={setRebotar} />} />
+          <Route path="/producto/:id" element={<ProductoDetalles setRebotar={setRebotar} />}> </Route>
           <Route path="/carrito" element={<CarritoDetalles/>}> </Route>
         <Route path="/contacto" element={<Contacto />} />
       </Routes>
    
-  </>;
+  </div>;
 }
 export default App;

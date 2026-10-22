@@ -7,7 +7,9 @@ const stockSiHay = (producto) => {
   return producto.stock > 0 ;
 };
 
-const TarjetaProducto = ({ producto }) => {
+
+const TarjetaProducto = ({ producto,setRebotar }) => {
+
   const [aviso, setAviso] = useState(null);
 
   // El aviso del boton vuelve al texto original despues de un momento
@@ -24,8 +26,12 @@ const TarjetaProducto = ({ producto }) => {
 
     if (!item) {
       carrito.push({ id: producto.id, cantidad: 1, precio: producto.precio });
+
+      setRebotar(prev => prev+1)
     } else if (item.cantidad < producto.stock) {
       item.cantidad += 1;
+      setRebotar(prev => prev+1)
+
     } else {
       setAviso("Sin más stock");
       return;

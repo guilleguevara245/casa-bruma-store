@@ -29,7 +29,7 @@
     padding: 0;
     margin: 0;
     font-size: 1rem;
-    border-bottom: black solid 1px;
+    border-bottom: var(--cb-borde) solid 1px;
 }
 .producto_contenedor{
     display: flex;
@@ -46,7 +46,7 @@
     font-size: 1.8rem;
     font-weight: 600;
     letter-spacing: -0.5px;
-    color: #252525;
+    color: var(--cb-texto);
 }
 .oferta{
     background-color: rgb(243, 125, 15);
@@ -64,13 +64,20 @@
     text-align: center;
     padding: 1rem 0;
 }
+.controladorContenedor{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 23px;
+}
 .accionCarrito>p{
     margin: 0;
     text-align: center;
     width: 30px;
 }
 .agregarCarrito{
-    margin-left: 30px;
+    margin: 0 30px;
+    
 }
 
 .producto_informacion{
@@ -83,10 +90,13 @@
     
 }
 
+.botones{
+    width: 35px;
+    
+}
 
 .descripcion{
-    border-left: 1px  solid black;
-    border-left: 1px  solid black;
+    border-left: 1px  solid var(--cb-borde);
     max-width: 700px;
     font-size: 1rem;
     flex: 1; /*toma extra del ancho por si la descripcion es larga*/
@@ -110,7 +120,9 @@
     margin-left:5px ;
 }
 .producto button:nth-child(4){
-    border: 1px solid black;
+
+    border: 1px solid var(--cb-borde);
+
     border-radius: 10px;
 }
 @media (max-width: 768px) {

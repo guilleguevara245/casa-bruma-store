@@ -4,7 +4,7 @@ import productos from "../../data/productos";
 import TarjetaProducto from "../../components/TarjetaProducto";
 import { useState, useEffect } from "react";
 
-const ListadoProductos = () => {
+const ListadoProductos = ({setRebotar}) => {
   const [busqueda, setBusqueda] = useState('')
   const [busquedaAplicada, setBusquedaAplicada] = useState('')
   const [orden, setOrden] = useState('ninguno')
@@ -22,7 +22,6 @@ const ListadoProductos = () => {
   const catalogoFilt = productos.filter((producto) => producto.nombre.toLowerCase().includes(busquedaAplicada.toLowerCase().trim()))
   const hayBusqueda = busquedaAplicada.trim() !== ''
 
-  // Se copia el array con [...] porque sort() modifica el original
   const catalogoOrdenado = orden === 'ninguno'
     ? catalogoFilt
     : [...catalogoFilt].sort((a, b) =>
@@ -89,7 +88,7 @@ const ListadoProductos = () => {
         <Row xs={1} sm={2} lg={3} xl={4} className="g-4">
           {catalogoOrdenado.map((producto) => (
             <Col key={producto.id}>
-              <TarjetaProducto producto={producto} />
+              <TarjetaProducto producto={producto} setRebotar={setRebotar} />
             </Col>
           ))}
         </Row>

@@ -7,7 +7,7 @@ import Alert from 'react-bootstrap/Alert';
 import Image from 'react-bootstrap/Image';
 
 import IrAtras from "../../components/irAtras/IrAtras";
-function ProductoDetalles() {
+function ProductoDetalles({setRebotar}) {
     //aplico renderizador condicional "producto.stock == 1 &&"
     const {id} =useParams();
     const [cantidad,setCantidad] =useState(0)
@@ -37,7 +37,7 @@ function ProductoDetalles() {
           );
                                            //pero reemplaza el valor de cantidad por el nuevo valor de cantidad.
       }                                    //Si la condición es falsa, devuelve el objeto e tal como está, sin cambiar sus propiedades.
-
+        setRebotar(prev => prev + 1); // suma para indicar que hubo un cambio, se agrego un elemento.
       }
      else{
         if(succes){
@@ -45,7 +45,9 @@ function ProductoDetalles() {
         }
       setError(true)
     }
+  
     localStorage.setItem("carrito", JSON.stringify(carrito));
+    
   }
   return (
     <>
@@ -74,9 +76,11 @@ function ProductoDetalles() {
             <div className={styles.producto_carrito}>
                 <div className={styles.accionCarrito}>
                   
-                  <Button variant="light"  onClick={()=>cantidad>0?setCantidad(cantidad-1):setCantidad(0)}>-</Button>
+                  <div className={styles.controladorContenedor}>
+                    <Button variant="light" className={styles.botones} onClick={()=>cantidad>0?setCantidad(cantidad-1):setCantidad(0)}>-</Button>
                   <p>{cantidad} </p>
-                  <Button variant="light"  onClick={()=>cantidad<producto.stock?setCantidad(cantidad+1):setCantidad(cantidad)}>+</Button>
+                  <Button variant="light" className={styles.botones} onClick={()=>cantidad<producto.stock?setCantidad(cantidad+1):setCantidad(cantidad)}>+</Button>
+                  </div>
                   <Button variant="light"className={styles.agregarCarrito} onClick={agregarLocalStorage}>agregar al carrito</Button>
                 </div>
             </div>

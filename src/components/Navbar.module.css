@@ -1,17 +1,81 @@
 .barra {
-  background-color: #26302F;
+  background-color: var(--cb-barra);
 }
 
 .barra .marca {
   font-family: "Cormorant Garamond", serif;
   font-size: 1.6rem;
-  color: #EAECE9;
+  color: var(--cb-barra-texto);
 }
 
 .barra .link {
-  color: #EAECE9;
+  color: var(--cb-barra-texto);
 }
 
 .activo {
   font-weight: 700;
+}
+.botonModo {
+  background: transparent;
+  color: var(--cb-barra-texto);
+  border: 1px solid var(--cb-barra-texto);
+  border-radius: 6px;
+  padding: 0.25rem 0.75rem;
+  margin-left: 0.5rem;
+}
+
+.botonModo:hover {
+  background-color: rgba(234, 236, 233, 0.15);
+}
+
+/*por elias*/
+.contenedorNav{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.iconoDeCarrito{
+    width: 35px;
+    object-fit: contain;
+    animation: rebote 0.6s ease;
+
+}
+
+.contenedor{
+  min-width:40vw ;
+  justify-content: space-around;
+}
+@media (max-width: 767px) {
+  .botonModo {
+    margin: 0.5rem 0 0;
+    align-self: flex-start;
+  }
+  .contenedor{
+    display: flex;
+  }
+  .contenedorNav{
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+  }
+}
+@keyframes rebote {
+    0%, 100% {
+        transform: translateY(0);
+        
+    }
+    30% {
+        transform: translateY(-6px);
+  
+    }
+    50% {
+        transform: translateY(0);
+    }
+    70% {
+        transform: translateY(2px);
+    }
+    85% {
+        transform: translateY(0);
+    }
 }

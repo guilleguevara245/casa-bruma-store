@@ -6,7 +6,7 @@ function IrAtras() {
   return (
     <div className={styles.atras}>
       <Button variant="secondary">
-      <NavLink to="/" className="btn btn-secondary text-decoration-none">
+      <NavLink to="/productos" className="btn btn-secondary text-decoration-none">
             &lt;
         </NavLink>
       </Button>
