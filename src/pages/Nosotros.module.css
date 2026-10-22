@@ -1,0 +1,20 @@
+.encabezado {
+  background-color: #26302F;
+  color: #EAECE9;
+  text-align: center;
+  padding: 3rem 1rem;
+}
+
+.encabezado h1 {
+  font-size: 3rem;
+}
+
+.titulo {
+  font-family: "Cormorant Garamond", serif;
+  font-size: 2rem;
+}
+
+.valor h2 {
+  font-family: "Cormorant Garamond", serif;
+  font-size: 1.6rem;
+}
