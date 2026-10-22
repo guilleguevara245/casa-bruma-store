@@ -43,7 +43,7 @@
   font-family: "Cormorant Garamond", serif;
   font-size: 1.5rem;
 }
-/* Botones que siguen los colores del modo claro/oscuro */
+
 .boton {
   --bs-btn-bg: var(--cb-boton);
   --bs-btn-border-color: var(--cb-boton);
