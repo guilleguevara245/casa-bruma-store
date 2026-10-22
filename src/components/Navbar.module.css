@@ -1,17 +1,36 @@
 .barra {
-  background-color: #26302F;
+  background-color: var(--cb-barra);
 }
 
 .barra .marca {
   font-family: "Cormorant Garamond", serif;
   font-size: 1.6rem;
-  color: #EAECE9;
+  color: var(--cb-barra-texto);
 }
 
 .barra .link {
-  color: #EAECE9;
+  color: var(--cb-barra-texto);
 }
 
 .activo {
   font-weight: 700;
+}
+.botonModo {
+  background: transparent;
+  color: var(--cb-barra-texto);
+  border: 1px solid var(--cb-barra-texto);
+  border-radius: 6px;
+  padding: 0.25rem 0.75rem;
+  margin-left: 0.5rem;
+}
+
+.botonModo:hover {
+  background-color: rgba(234, 236, 233, 0.15);
+}
+
+@media (max-width: 767px) {
+  .botonModo {
+    margin: 0.5rem 0 0;
+    align-self: flex-start;
+  }
 }
