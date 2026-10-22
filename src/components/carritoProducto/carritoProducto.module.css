@@ -11,6 +11,7 @@
 .contenedor_valores{
 
     min-width:50vw ;    
+  
     
 }
 .cantidad{
@@ -25,9 +26,10 @@
 }
 .contenedorDeControl{
     display: flex;  
-    min-width: 6vw;
-    justify-content: center;
-    align-items: center;
+    min-width: 100px;
+    justify-content:space-around;
+
+    align-items:center;
 
 }
 .contenedorDanger{
@@ -45,8 +47,17 @@
    .img_content{
     width: 6rem;
 }
+
 .contenedorDeControl{
-    padding-left: 1rem;
+    padding: 0 2rem;
+
+}
+.contenedorDeControl button{
+    padding: 10px;
+}
+.contenedorDeControl button:nth-child(2){
+    margin-left: 15px;
+   
 }
 .contenedorDanger{
     padding-right: 1rem;

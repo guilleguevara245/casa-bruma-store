@@ -7,7 +7,7 @@ import Alert from 'react-bootstrap/Alert';
 import Image from 'react-bootstrap/Image';
 
 import IrAtras from "../../components/irAtras/IrAtras";
-function ProductoDetalles() {
+function ProductoDetalles({setRebotar}) {
     //aplico renderizador condicional "producto.stock == 1 &&"
     const {id} =useParams();
     const [cantidad,setCantidad] =useState(0)
@@ -37,7 +37,7 @@ function ProductoDetalles() {
           );
                                            //pero reemplaza el valor de cantidad por el nuevo valor de cantidad.
       }                                    //Si la condición es falsa, devuelve el objeto e tal como está, sin cambiar sus propiedades.
-
+        setRebotar(prev => prev + 1);
       }
      else{
         if(succes){
@@ -45,7 +45,9 @@ function ProductoDetalles() {
         }
       setError(true)
     }
+  
     localStorage.setItem("carrito", JSON.stringify(carrito));
+    
   }
   return (
     <>
