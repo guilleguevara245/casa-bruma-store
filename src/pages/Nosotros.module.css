@@ -18,3 +18,13 @@
   font-family: "Cormorant Garamond", serif;
   font-size: 1.6rem;
 }
+
+.icono {
+  width: 56px;
+  margin-bottom: 1rem;
+}
+
+.iconoEncabezado {
+  width: 90px;
+  margin-bottom: 1rem;
+}
