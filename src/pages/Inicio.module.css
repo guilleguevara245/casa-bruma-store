@@ -43,3 +43,20 @@
   font-family: "Cormorant Garamond", serif;
   font-size: 1.5rem;
 }
+/* Botones que siguen los colores del modo claro/oscuro */
+.boton {
+  --bs-btn-bg: var(--cb-boton);
+  --bs-btn-border-color: var(--cb-boton);
+  --bs-btn-color: var(--cb-boton-texto);
+  --bs-btn-hover-bg: var(--cb-boton-hover);
+  --bs-btn-hover-border-color: var(--cb-boton-hover);
+  --bs-btn-hover-color: var(--cb-boton-texto);
+}
+
+.botonContorno {
+  --bs-btn-color: var(--cb-texto);
+  --bs-btn-border-color: var(--cb-texto);
+  --bs-btn-hover-bg: var(--cb-boton);
+  --bs-btn-hover-border-color: var(--cb-boton);
+  --bs-btn-hover-color: var(--cb-boton-texto);
+}
