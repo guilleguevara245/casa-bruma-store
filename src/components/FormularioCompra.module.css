@@ -1,6 +1,16 @@
 @import url("https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500&family=Jost:wght@400&display=swap");
 
+/* Formulario dentro de la pagina (Contacto) */
 .formularioContainer {
+  margin-top: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+/* Formulario encima de la pagina (confirmacion del carrito) */
+.formularioFlotante {
   position: fixed;
   top: 50%;
   left: 50%;

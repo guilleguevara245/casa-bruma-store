@@ -50,7 +50,9 @@ const validate = (data) => {
 
 
 
-export const FormularioCompra = ({onCompra}) => {
+// flotante: se muestra encima de la pagina (confirmacion del carrito).
+// Con flotante={false} se muestra dentro de la pagina (Contacto).
+export const FormularioCompra = ({onCompra, flotante = true}) => {
 
   const [formData, setFormData] = useState({
     firstName: "",
@@ -68,8 +70,8 @@ export const FormularioCompra = ({onCompra}) => {
   const [desactivar,setDesactivar] =useState(true)
   console.log(formData);
   function compra(){
-  onCompra()
-    setDesactivar(false)
+    onCompra?.()
+    if (flotante) setDesactivar(false)
   }
 
   const handleChange = (event) => {
@@ -138,7 +140,7 @@ export const FormularioCompra = ({onCompra}) => {
   return (
 
     <>
-    { desactivar && <div className={style.formularioContainer}>
+    { desactivar && <div className={flotante ? style.formularioFlotante : style.formularioContainer}>
 
       <div className={style.formularioBox}>
         <form onSubmit={handleSubmit} noValidate>
